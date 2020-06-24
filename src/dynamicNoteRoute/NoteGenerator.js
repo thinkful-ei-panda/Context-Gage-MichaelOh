@@ -10,7 +10,7 @@ export default class NoteGenerator extends React.Component{
 
     render(){
             const {notes} = this.context
-
+              
             const notesMaped = notes.map( note => 
                         <div key={note.id} className='box' id={note.folderId}>
                     <Link to={`/note/${note.id}` }>

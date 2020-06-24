@@ -12,8 +12,17 @@ import './App.css'
 export default class App extends React.Component {
 
   state = {
-    folders : [] , 
-    notes : [], 
+    folders : [{
+      name : 'opps', 
+       id : 'oh no batman'
+    }],
+    notes : [{
+    id: "yikes",
+    name: "opps",
+    modified: "never",
+    folderId: "r.i.p.",
+    content: "nah"
+    }]
   }
 
   componentDidMount(){
@@ -31,7 +40,7 @@ export default class App extends React.Component {
 
     render(){
       console.log(this.state);
-  
+          debugger;
      return (
       <main className='App'>
         <Header/>
@@ -43,15 +52,11 @@ export default class App extends React.Component {
             <div className="content">
               <StoreContext.Provider value ={{
                 folders : this.state.folders,
-              }}>
-                <Folders/>
-              </StoreContext.Provider> 
-
-              <StoreContext.Provider value = {{
                 notes : this.state.notes,
               }}>
+                <Folders/>
                 <Notes/>
-              </StoreContext.Provider>  
+              </StoreContext.Provider>   
             </div>) } }  
           />
 

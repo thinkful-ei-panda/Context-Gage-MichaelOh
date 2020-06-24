@@ -2,8 +2,8 @@ import React from 'react';
 
 const StoreContext = React.createContext({
     folders : [{
-      name: 'opps', 
-      id : 'oh no batman'
+      name : 'opps', 
+       id : 'oh no batman'
     }],
     notes : [{
     "id": "yikes",
