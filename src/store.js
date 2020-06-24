@@ -1,19 +1,22 @@
+
+
+
 export default {
-    "folders": [
-      {
-        "id": "b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1",
-        "name": "Important"
-      },
-      {
-        "id": "b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1",
-        "name": "Super"
-      },
-      {
-        "id": "b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1",
-        "name": "Spangley"
-      }
-    ],
-    "notes": [
+     "folders": [],   /* [
+       {
+         "id": "b0715efe-ffaf-11e8-8eb2-f2801f1b9fd1",
+         "name": "Important"
+       },
+       {
+         "id": "b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1",
+         "name": "Super"
+       },
+       {
+         "id": "b07162f0-ffaf-11e8-8eb2-f2801f1b9fd1",
+         "name": "Spangley"
+       }
+     ],*/
+    "notes":  [] /*[
       {
         "id": "cbc787a0-ffaf-11e8-8eb2-f2801f1b9fd1",
         "name": "Dogs",
@@ -112,5 +115,5 @@ export default {
         "folderId": "b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1",
         "content": "Veritatis porro minima perspiciatis. Repellat veniam quo iste ut. Iusto voluptas quae quibusdam. Odit neque iusto cupiditate iste quam. Fuga itaque aut praesentium ullam saepe ut et vero.\n \rQuisquam doloremque molestiae. Enim rerum dolorem et velit itaque magnam laborum. Aut officiis porro.\n \rQuae eum eaque error. Sed itaque ipsam nam provident aut voluptate. Perferendis repudiandae sequi laudantium est est animi eum. Unde alias et doloribus est hic et. Sed distinctio incidunt maiores aut voluptatibus et omnis mollitia fugit."
       }
-    ]
+    ] */
   }

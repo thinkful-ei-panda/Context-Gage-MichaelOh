@@ -1,25 +1,36 @@
 import React  from 'react';
 import { Route } from 'react-router-dom'
 import Header from "./Header"
-import STORE from './store'
 import Folders from "./dynamicFolderRoute/Folders"
 import Notes from "./dynamicNoteRoute/Notes"
 import NoteDetails from './dynamicNoteRoute/NoteDetails'
 import SubmitForm from './submitForm/SubmitForm'
 import StoreContext from './Context'
+import {setFolders, setNotes} from './api/api'
 import './App.css'
 
 export default class App extends React.Component {
 
   state = {
-    folders : STORE.folders , 
-    notes : STORE.notes, 
+    folders : [] , 
+    notes : [], 
   }
+
+  componentDidMount(){
+    const folders = setFolders()
+    const notes = setNotes()
+    this.setState({
+      folders : folders,
+      notes : notes
+    })
+  }
+  
 
   
 
 
     render(){
+      console.log(this.state);
   
      return (
       <main className='App'>
