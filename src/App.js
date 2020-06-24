@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import { Route } from 'react-router-dom'
 import Header from "./Header"
 import STORE from './store'
@@ -6,19 +6,21 @@ import Folders from "./dynamicFolderRoute/Folders"
 import Notes from "./dynamicNoteRoute/Notes"
 import NoteDetails from './dynamicNoteRoute/NoteDetails'
 import SubmitForm from './submitForm/SubmitForm'
+import StoreContext from './Context'
 import './App.css'
 
-class App extends React.Component {
+export default class App extends React.Component {
 
   state = {
     folders : STORE.folders , 
     notes : STORE.notes, 
   }
 
-
+  
 
 
     render(){
+  
      return (
       <main className='App'>
         <Header/>
@@ -28,12 +30,17 @@ class App extends React.Component {
           <Route exact path="/" 
             render={(props) => {return (
             <div className="content">
-              <Folders 
-              folders={this.state.folders}
-              />
-              <Notes
-              notes={this.state.notes}              
-              />
+              <StoreContext.Provider value ={{
+                folders : this.state.folders,
+              }}>
+                <Folders/>
+              </StoreContext.Provider> 
+
+              <StoreContext.Provider value = {{
+                notes : this.state.notes,
+              }}>
+                <Notes/>
+              </StoreContext.Provider>  
             </div>) } }  
           />
 
@@ -44,15 +51,19 @@ class App extends React.Component {
               render={(props) => {
                 return (
                   <div className="content">
-                    <Folders
-                      folders={this.state.folders}
+                    <StoreContext.Provider value ={{
+                       folders : this.state.folders,
+                    }}>
+                      <Folders/>
+                    </StoreContext.Provider>
+                    
+                    <StoreContext.Provider value = {{
+                      notes : this.state.notes.filter(note => 
+                      props.match.params.folderId === note.folderId),
+                      }}>
+                      <Notes/>
+                    </StoreContext.Provider>
                       
-                    />
-                      <Notes
-                        notes={this.state.notes.filter(note => 
-                          props.match.params.folderId === note.folderId)}
-                          
-                        />
                   </div>
                 )
               }}
@@ -100,7 +111,3 @@ class App extends React.Component {
     );
   } 
 }
-
-  
-
-export default App;
